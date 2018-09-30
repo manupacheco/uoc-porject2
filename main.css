@@ -1,0 +1,33 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: white;
+}
+
+footer > a {
+  color: #e9e9e9;
+  font-weight: bold;
+}
+
+.info {
+  margin-top: 64px;
+}
+
+.info-text > p {
+  margin: auto;
+  padding-bottom: 10px;
+  max-width: 800px;
+  text-align: justify;
+}
