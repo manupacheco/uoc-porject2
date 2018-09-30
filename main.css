@@ -29,7 +29,7 @@ footer > a {
   margin: auto;
   padding-bottom: 10px;
   max-width: 800px;
-  text-align: justify;
+  text-align: center;
 }
 
 .contact {
@@ -40,4 +40,8 @@ footer > a {
 
 h3 > small {
   font-size: 14px;
+}
+
+.info-list {
+  list-style: none;
 }
