@@ -1,28 +1,28 @@
 function validateForm() {
   var name = document.getElementById('name').value;
   if (name == "") {
-    document.getElementById('status').innerHTML = "Name cannot be empty";
+    document.getElementById('status').innerHTML = "Nombre no puede estar vacío";
     return false;
   }
   var email = document.getElementById('email').value;
   if (email == "") {
-    document.getElementById('status').innerHTML = "Email cannot be empty";
+    document.getElementById('status').innerHTML = "Mail no puede estar vacío";
     return false;
   } else {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(email)) {
-      document.getElementById('status').innerHTML = "Email format invalid";
+      document.getElementById('status').innerHTML = "Formato del mail invalido";
       return false;
     }
   }
   var subject = document.getElementById('subject').value;
   if (subject == "") {
-    document.getElementById('status').innerHTML = "Subject cannot be empty";
+    document.getElementById('status').innerHTML = "Asunto no puede estar vacío";
     return false;
   }
   var message = document.getElementById('message').value;
   if (message == "") {
-    document.getElementById('status').innerHTML = "Message cannot be empty";
+    document.getElementById('status').innerHTML = "Mensaje no puede estar vacío";
     return false;
   }
   document.getElementById('status').innerHTML = "Enviando...";
@@ -33,7 +33,7 @@ function validateForm() {
     'message': $('textarea[name=message]').val()
   };
   $.ajax({
-    url: "mail.php",
+    url: "helpers/mail.php",
     type: "POST",
     data: formData,
     success: function (data) {
@@ -41,7 +41,7 @@ function validateForm() {
       $('#contact-form').closest('form').find("input[type=text], textarea").val("");
     },
     error: function (err) {
-      $('#status').text(err);
+      document.getElementById('status').innerHTML = err;
     }
   });
 }
