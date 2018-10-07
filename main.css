@@ -32,6 +32,12 @@ footer > a {
   text-align: center;
 }
 
+.alert {
+  background-color: red;
+  color: white;
+  font-weight: 800;
+}
+
 .contact {
   background-color: #f5f5f5;
   padding-bottom: 30px;
@@ -44,4 +50,18 @@ h3 > small {
 
 .info-list {
   list-style: none;
+}
+
+.datepicker {
+  text-align: center;
+  color: grey;
+}
+
+.checks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: grey;
+  margin: 40px 0px;
 }

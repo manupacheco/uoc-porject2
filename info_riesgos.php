@@ -4,37 +4,16 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>El INPRL</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <title>El INPRL - Riesgos laborales</title>
+  <?php 
+    include 'partials/css-imports.php';
+  ?>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark elegant-color fixed-top scrolling-navbar">
-    <div class="container">
-      <i class="fa fa-pie-chart white-text"> </i><a class="navbar-brand" href="/"> INPRL</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/">El INPRL</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/info-riesgos.html">Información sobre riesgos</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php 
+    include 'partials/navbar.php';
+  ?>
 
   <section class="info card card-image mb-3" style="background-image: url(https://images.unsplash.com/photo-1508921234172-b68ed335b3e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=92e40b3819e4c173debf1500f27c9b60&auto=format&fit=crop&w=1950&q=80);">
     <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
@@ -417,19 +396,9 @@
     </ul>
   </section>
 
-  <footer class="indigo text-center py-3">
-    © 2018 <a href="https://www.linkedin.com/in/mpachecopal/"> Manu Pacheco </a><a href="/helpers/server-test.php">
-      server-test</a>
-  </footer>
-
-  <!-- JQuery -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+  <?php 
+    include 'partials/footer.php';
+  ?>
 </body>
 
 </html>
