@@ -1,6 +1,5 @@
-  <footer class="indigo text-center py-3">
-    © 2018 <a href="https://www.linkedin.com/in/mpachecopal/"> Manu Pacheco </a><a href="/helpers/server-test.php">
-      server-test</a>
+  <footer class="text-center py-3">
+    © 2018 <a href="https://www.linkedin.com/in/mpachecopal/"> Manu Pacheco </a>
   </footer>
 
   <!-- JQuery -->

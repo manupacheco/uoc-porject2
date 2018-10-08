@@ -18,26 +18,43 @@
     <div class="info card card-image mb-3" style="background-image: url(https://images.unsplash.com/photo-1521540124319-66c09f0d5999?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=de1ecb553b42a0e7c749445672db4cf2&auto=format&fit=crop&w=1283&q=80);">
       <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
         <div class="container info-text align-items-center">
-          <h2 class="card-title pt-2"><strong>Nuevo Parte</strong></h2>
-          <p>Información sobre los riesgos laborales que una persona que trabaje como desarrollador web pueda llegar a
-            sufrir en su puesto de trabajo y su prevención.</p>
+          <h2 class="card-title pt-2"><strong>NUEVO PARTE</strong></h2>
+          <p></p>
         </div>
       </div>
     </div>
-
+  <?php
+    if(isset($_POST["submit"])) {
+  ?>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-2"></div>
+      <div class="alert alert-primary alert-dismissible fade show col-md-8" role="alert">
+        <?php include 'helpers/add_parte.php'; ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <?php
+    include 'helpers/select_trabajadores.php'; 
+    };
+  ?>
   <section class="section info container">
       <div class="row">
         <div class="col-md-2"></div>
           <div class="col-md-8 mb-md-0 mb-5">
-              <form id="parte-form" name="parte-form" action="helpers/add_parte.php" method="POST">
+              <form id="parte-form" name="parte-form" action="nuevo_parte.php" method="POST">
                   <div class="row">
                       <div class="col-md-4">
-                        <div class="md-form">
-                          <input placeholder="Seleccionar fecha" type="date" id="datepicker" name="fecha" class="form-control datepicker">
+                        <div class="md-form label-date">
+                          <label>Fecha del accidente</label>
+                          <input placeholder="Seleccionar fecha" type="date" id="datepicker" name="fecha" class="form-control datepicker" required>
                         </div>
                       </div>
-                      <div class="col-md-8">
-                          <label for="nombre">Trabajdor</label>
+                      <div class="col-md-8 trabajador">
+                          <label for="nombre">Trabajador</label>
                           <select class="md-form form-control" id="nombre" name="nombre" required>
                               <option value="" disabled selected>Selecciona un trabajador...</option>
                               <?php
@@ -54,7 +71,7 @@
                   <div class="row">
                       <div class="col-md-12">
                           <div class="md-form">
-                              <textarea type="text" id="causa" name="causa" rows="2" class="form-control md-textarea"></textarea>
+                              <textarea type="text" id="causa" name="causa" rows="2" class="form-control md-textarea" required></textarea>
                               <label for="causa" class="">Causa o tipología del accidente</label>
                           </div>
                       </div>
@@ -62,13 +79,13 @@
                   <div class="row">
                       <div class="col-md-6">
                           <div class="md-form mb-0">
-                              <input type="text" id="tipo_lesion" name="tipo_lesion" class="form-control">
+                              <input type="text" id="tipo_lesion" name="tipo_lesion" class="form-control" required>
                               <label for="tipo_lesion" class="">Tipo o naturaleza de la lesión</label>
                           </div>
                       </div>
                       <div class="col-md-6">
                           <div class="md-form mb-0">
-                              <input type="text" id="parte_lesion" name="parte_lesion" class="form-control">
+                              <input type="text" id="parte_lesion" name="parte_lesion" class="form-control" required>
                               <label for="parte_lesion" class="">Parte del cuerpo lesionada</label>
                           </div>
                       </div>
@@ -98,7 +115,7 @@
                     </div>
                   </div>
                   <div class="text-md-center">
-                    <input class="btn btn-indigo text-center text-md-center" type="submit" value="NUEVO PARTE"/>
+                    <input class="btn btn-indigo text-center text-md-center" type="submit" name="submit" value="NUEVO PARTE"/>
                   </div>
               </form>
               <div id="status"></div>
