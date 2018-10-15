@@ -13,6 +13,12 @@
     $gravedad = $_POST['gravedad'];
   if(isset( $_POST['causa_baja']))
     $causa_baja = $_POST['causa_baja'];
+  if(isset( $_POST['comunidad_aut']))
+    $comunidad_aut = $_POST['comunidad_aut'];
+  if(isset( $_POST['edad']))
+    $edad = $_POST['edad'];
+  if(isset( $_POST['sexo']))
+    $sexo = $_POST['sexo'];
 
   if($causa_baja === Null){
     $causa_baja = 'No';
@@ -30,10 +36,10 @@
     $db = "aww4ukatfyp42dxq";
     
     $conexion = mysqli_connect( $server, $user, $password ) or die ("Ha habido un problema con el servidor, intentelo más tarde");
-    $db = mysqli_select_db( $conexion, $db ) or die ( "Ha habido un problema con la base de datos, intentelo más tarde" );
+    $db = mysqli_select_db( $conexion, $db ) or die ("Ha habido un problema con la base de datos, intentelo más tarde" );
 
-    $consulta = "INSERT INTO parte (DNI, Fecha_accidente, Persona_accidentada, Causa_accidente, Tipo_lesion, Partes_cuerpo_lesionado, Gravedad, Baja) VALUES ('$dni', '$fecha', '$nombre', '$causa', '$tipo_lesion', '$parte_lesion', '$gravedad', '$causa_baja')";
-    $resultado = mysqli_query( $conexion, $consulta ) or die ( "Ha habido un problema con la conexón, intentelo más tarde");
+    $consulta = "INSERT INTO parte (DNI, Fecha_accidente, Persona_accidentada, Causa_accidente, Tipo_lesion, Partes_cuerpo_lesionado, Gravedad, Baja, Comunidad_aut, Edad, Sexo) VALUES ('$dni', '$fecha', '$nombre', '$causa', '$tipo_lesion', '$parte_lesion', '$gravedad', '$causa_baja', '$comunidad_aut', '$edad', '$sexo')";
+    $resultado = mysqli_query( $conexion, $consulta ) or die ("Ha habido un problema con la conexón, intentelo más tarde");
     mysqli_close( $conexion );
     echo "Parte creado correctamente.";
   }
