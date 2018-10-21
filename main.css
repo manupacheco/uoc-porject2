@@ -78,3 +78,10 @@ h3 > small {
 .label-date > label {
   margin-top: -34px;
 }
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

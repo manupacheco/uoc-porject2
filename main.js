@@ -54,5 +54,7 @@ function validateForm() {
 }
 
 $(document).ready(function () {
-  document.getElementById('datepicker').valueAsDate = new Date();
+  if(window.location.pathname === '/nuevo_parte.php'){
+    document.getElementById('datepicker').valueAsDate = new Date();
+  }
 });

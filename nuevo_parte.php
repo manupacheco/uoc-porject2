@@ -12,7 +12,9 @@
 <body>
   <?php
     include 'partials/navbar.php';
-    include 'helpers/select_trabajadores.php';
+    require_once ('services/parte_service.php');
+    $parte_service = new parteService();
+    $parte_service->selectTrabajadores();
   ?>
 
     <div class="info card card-image mb-3" style="background-image: url(https://images.unsplash.com/photo-1521540124319-66c09f0d5999?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=de1ecb553b42a0e7c749445672db4cf2&auto=format&fit=crop&w=1283&q=80);">
@@ -30,7 +32,9 @@
     <div class="row">
     <div class="col-md-2"></div>
       <div class="alert alert-primary alert-dismissible fade show col-md-8" role="alert">
-        <?php include 'helpers/add_parte.php'; ?>
+        <?php
+          $parte_service->addParte($_POST['dni'],$_POST['nombre'], $_POST['fecha'], $_POST['causa'], $_POST['tipo_lesion'], $_POST['parte_lesion'], $_POST['gravedad'], $_POST['causa_baja']);
+        ?>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -38,7 +42,7 @@
     </div>
   </div>
   <?php
-    include 'helpers/select_trabajadores.php'; 
+    $parte_service->selectTrabajadores();
     };
   ?>
   <section class="section info container">
@@ -58,7 +62,7 @@
                           <select class="md-form form-control" id="nombre" name="nombre" required>
                               <option value="" disabled selected>Selecciona un trabajador...</option>
                               <?php
-                                while ($columna = mysqli_fetch_array( $resultado ))
+                                while ($columna = mysqli_fetch_array( $parte_service->trabajadores ))
                                 {
                                   echo "<option value='" . $columna['nombre'] . $columna['DNI'] ."'>";
                                   echo $columna['nombre'];

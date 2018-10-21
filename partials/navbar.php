@@ -16,6 +16,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/nuevo_parte.php">Nuevo parte</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/modificar_parte.php">Modificar parte</a>
+        </li>
       </ul>
     </div>
   </div>
