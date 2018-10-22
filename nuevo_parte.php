@@ -118,29 +118,6 @@
                       </label>
                     </div>
                   </div>
-                  <br><br>
-                  <span class="trabajador">Datos para estudios estadísticos (Opcional).</span>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="md-form mb-0">
-                        <input type="text" id="comunidad_aut" name="comunidad_aut" class="form-control">
-                        <label for="comunidad_aut" class="">Comunidad autónoma</label>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="md-form mb-0">
-                        <input type="number" id="edad" name="edad" class="form-control">
-                        <label for="edad" class="">Edad</label>                   
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <select class="md-form form-control" id="sexo" name="sexo">
-                        <option value="" disabled selected>Selecciona un sexo...</option>
-                        <option value="Hombre">Hombre</option>
-                        <option value="Mujer">Mujer</option>
-                      </select>                
-                    </div>
-                  </div>
                   <div class="text-md-center">
                     <input class="btn btn-indigo text-center text-md-center" type="submit" name="submit" value="NUEVO PARTE"/>
                   </div>

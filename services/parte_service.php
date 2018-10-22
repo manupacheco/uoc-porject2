@@ -23,7 +23,7 @@ class parteService {
 
       $this->db->createConnection();
       $consulta = "INSERT INTO parte (DNI, Fecha_accidente, Persona_accidentada, Causa_accidente, Tipo_lesion, Partes_cuerpo_lesionado, Gravedad, Baja) VALUES ('$dni', '$fecha', '$nombre', '$causa', '$tipo_lesion', '$parte_lesion', '$gravedad', '$causa_baja')";
-      $this->db->executeQuery($consulta);
+      $resultado = $this->db->executeQuery($consulta);
       $this->db->closeConnection();
       echo "Parte creado correctamente.";
     }
@@ -55,7 +55,7 @@ class parteService {
       $resultado = $this->db->executeQuery($consulta);
       if($resultado){
         if($resultado>0){
-          echo "Datos modificados correctamente, parte: " . $id_accidente;
+          echo "Datos modificados correctamente, código identificador: " . $id_accidente;
         }
       }else{
         echo "Error ocurrido al modificar datos en el sistema. Contacte con el administrador.";
@@ -70,7 +70,7 @@ class parteService {
     $resultado = $this->db->executeQuery($consulta);
     if($resultado){
       if($resultado>0){
-        echo "Datos eliminados correctamente, parte: " . $id_accidente;
+        echo "Datos eliminados correctamente, código identificador: " . $id_accidente;
       }
     }else{
       echo "Error ocurrido al eliminar datos en el sistema. Contacte con el administrador.";
