@@ -1,3 +1,11 @@
+<?php 
+  if (isset($_GET['logout'])){
+    include_once ('services/auth_service.php');
+    $auth_service = new authService();
+    $auth_service->logout();
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 

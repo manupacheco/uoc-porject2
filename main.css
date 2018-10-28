@@ -85,3 +85,20 @@ h3 > small {
   justify-content: center;
   align-items: center;
 }
+
+.table-margins {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.nav-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: inherit;
+}
+
+.test-user {
+  margin-left: 30px;
+  color: rgb(148, 148, 148);
+  font-style: italic;
+}

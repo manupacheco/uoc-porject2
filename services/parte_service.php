@@ -4,6 +4,7 @@ class parteService {
   private $db;
   public $trabajadores;
   public $parte;
+  public $partes;
 
   public function __construct(){ 
     require_once "connect_db.php";
@@ -39,7 +40,19 @@ class parteService {
         echo "<b>No se ha encontrado ningún parte con ese código identificador<b>";
       }
     $this->db->closeConnection();
-  } 
+  }
+
+  public function consultarPartes($id_accidente, $nombre, $fecha, $causa, $tipo_lesion, $parte_lesion, $gravedad, $causa_baja) {
+    $this->db->createConnection();
+    $consulta = "SELECT * FROM parte WHERE cod_parte LIKE '%$id_accidente%' AND Persona_accidentada LIKE '%$nombre%' AND Fecha_accidente LIKE '%$fecha%' AND Causa_accidente LIKE '%$causa%' AND Tipo_lesion LIKE '%$tipo_lesion%' AND Partes_cuerpo_lesionado LIKE '%$parte_lesion%' AND Gravedad LIKE '%$gravedad%' AND Baja LIKE '%$causa_baja%'";
+    $resultado = $this->db->executeQuery($consulta);
+      if ($resultado->num_rows > 0) {
+        $this->partes = $resultado;
+      } else {
+        echo "<b>Búsqueda sin resultados.<b>";
+      }
+    $this->db->closeConnection();
+  }
 
   public function updateParte($id_accidente, $dni, $nombre, $fecha, $causa, $tipo_lesion, $parte_lesion, $gravedad, $causa_baja) {
     if($causa_baja === Null){

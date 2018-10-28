@@ -1,3 +1,7 @@
+<?php
+  include_once ('helpers/is_auth.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -57,4 +57,7 @@ $(document).ready(function () {
   if(window.location.pathname === '/nuevo_parte.php'){
     document.getElementById('datepicker').valueAsDate = new Date();
   }
+  if (window.location.pathname === '/index.php?errorlogin=true') {
+    $('#errormodal').modal('show');
+  }
 });
